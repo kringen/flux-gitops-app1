@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-1-app
+  namespace: flux-gitops-app1
   labels:
     app: app-1-app
 spec:

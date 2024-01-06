@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: app-1-app
+  namespace: flux-gitops-app1
 data:
   body: >
     <html>
