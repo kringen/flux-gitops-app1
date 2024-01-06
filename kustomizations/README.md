@@ -1,0 +1,1 @@
+# Kustomizations for namespace
