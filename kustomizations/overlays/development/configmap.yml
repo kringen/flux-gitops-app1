@@ -13,11 +13,11 @@ data:
         p {
           font-family:"Courier New";
           font-size:xx-large;
-          color:#22f;
+          color:#fff;
           text-align:center;
         }
       </style>
       <body>
-        <p>PRODUCTION</p>
+        <p>DEVELOP</p>
       </body>
     </html>
