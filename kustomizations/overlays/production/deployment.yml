@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-1-app
+  namespace: flux-gitops-app1-prod
+  labels:
+    app: app-1-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-1-app
+  template:
+    metadata:
+      labels:
+        app: app-1-app
+    spec:
+      containers:
+      - name: server
+        image: nginx:1.17
+        volumeMounts:
+          - name: app-1-app
+            mountPath: /usr/share/nginx/html
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: "128M"
+          limits:
+            cpu: 100m
+            memory: "256M"
+        env:
+        - name: LOG_LEVEL
+          value: "INFO"
+      volumes:
+      - name: app-1-app
+        configMap:
+          name: app-1-app
+          items:
+          - key: body
+            path: index.html
