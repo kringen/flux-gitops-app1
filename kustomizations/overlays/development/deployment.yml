@@ -4,18 +4,18 @@ kind: Deployment
 metadata:
   name: app-1-app
 spec:
-  replicas: 3
+  replicas: 1
   template:
     spec:
       containers:
       - name: server
         resources:
           requests:
-            cpu: 200m
-            memory: "256M"
+            cpu: 100m
+            memory: "128M"
           limits:
-            cpu: 400m
+            cpu: 200m
             memory: "256M"
         env:
         - name: LOG_LEVEL
-          value: "INFO"
+          value: "DEBUG"
